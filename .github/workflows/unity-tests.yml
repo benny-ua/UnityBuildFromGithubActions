@@ -1,4 +1,4 @@
-name: UnityBuildFromGithubActions
+name: Test Unity project
 
 on: [push, pull_request]
 
@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - test-project
+          - UnityBuildFromGithubActions
         testMode:
           - playmode
           - editmode

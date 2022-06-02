@@ -1,4 +1,4 @@
-name: Test project
+name: UnityBuildFromGithubActions
 
 on: [push, pull_request]
 

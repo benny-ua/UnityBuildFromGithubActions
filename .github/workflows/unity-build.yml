@@ -11,7 +11,7 @@ jobs:
       matrix:
         targetPlatform:
           - Android # Build an Android .apk standalone app.
-          - WebGL # WebGL.
+          - WebGL # WebGL
     steps:
       - uses: actions/checkout@v2
         with:

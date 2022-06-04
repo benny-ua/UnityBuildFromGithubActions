@@ -5,13 +5,16 @@ on: [push, pull_request]
 jobs:
   buildForAllSupportedPlatforms:
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: [self-hosted, ubuntu-latest]
     strategy:
       fail-fast: false
       matrix:
         targetPlatform:
           - Android # Build an Android .apk standalone app.
           #- WebGL # WebGL.
+        os: 
+          - self-hosted
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
         with:

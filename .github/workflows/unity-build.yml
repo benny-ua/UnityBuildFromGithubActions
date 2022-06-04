@@ -10,11 +10,7 @@ jobs:
       matrix:
         targetPlatform:
           - Android # Build an Android .apk standalone app.
-          #- WebGL # WebGL.
-        os: 
-          - self-hosted
-          - ubuntu-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: self-hosted, ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:

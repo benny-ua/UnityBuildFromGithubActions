@@ -76,18 +76,18 @@ public static class AutoBuilder
         //Available Playersettings: https://docs.unity3d.com/ScriptReference/PlayerSettings.Android.html
 
         //set settings from environment variables
-        PlayerSettings.Android.useCustomKeystore = false;
-      	PlayerSettings.applicationIdentifier = Environment.GetEnvironmentVariable("APP_ID");
-        PlayerSettings.Android.keystoreName = Environment.GetEnvironmentVariable("ANDROID_KEYSTORE_NAME");
-        PlayerSettings.Android.keystorePass = Environment.GetEnvironmentVariable("ANDROID_KEYSTORE_PASSWORD");
-        PlayerSettings.Android.keyaliasName = Environment.GetEnvironmentVariable("ANDROID_KEYALIAS_NAME");
-        PlayerSettings.Android.keyaliasPass = Environment.GetEnvironmentVariable("ANDROID_KEYALIAS_PASSWORD");
+        //PlayerSettings.Android.useCustomKeystore = false;
+      	//PlayerSettings.applicationIdentifier = Environment.GetEnvironmentVariable("APP_ID");
+        //PlayerSettings.Android.keystoreName = Environment.GetEnvironmentVariable("ANDROID_KEYSTORE_NAME");
+        //PlayerSettings.Android.keystorePass = Environment.GetEnvironmentVariable("ANDROID_KEYSTORE_PASSWORD");
+        //PlayerSettings.Android.keyaliasName = Environment.GetEnvironmentVariable("ANDROID_KEYALIAS_NAME");
+        //PlayerSettings.Android.keyaliasPass = Environment.GetEnvironmentVariable("ANDROID_KEYALIAS_PASSWORD");
 	
 	//set minimum Android SDK version
-	PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
+	//PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
 
 	//set the internal apk version to the current unix timestamp, so this increases with every build
-        PlayerSettings.Android.bundleVersionCode = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds; 
+        //PlayerSettings.Android.bundleVersionCode = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds; 
 
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android);
         if (!Directory.Exists("./build/Android/" + ProjectName ))

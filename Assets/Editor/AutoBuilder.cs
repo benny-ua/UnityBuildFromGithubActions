@@ -90,9 +90,9 @@ public static class AutoBuilder
         //PlayerSettings.Android.bundleVersionCode = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds; 
 
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android);
-        if (!Directory.Exists("./build/Android/" + ProjectName ))
-            Directory.CreateDirectory("./build/Android/" + ProjectName);
-        BuildReport report = BuildPipeline.BuildPlayer(GetScenePaths(), "./build/Android/" + ProjectName + "/" + ProjectName + ".apk", BuildTarget.Android, BuildOptions.None);
+        if (!Directory.Exists("./build/Android/"))
+            Directory.CreateDirectory("./build/Android/");
+        BuildReport report = BuildPipeline.BuildPlayer(GetScenePaths(), "./build/Android/" + ProjectName + ".apk", BuildTarget.Android, BuildOptions.None);
         BuildSummary summary = report.summary;
         if (summary.result == BuildResult.Succeeded)
         {

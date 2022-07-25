@@ -5,15 +5,15 @@ on: [push, workflow_dispatch]
 jobs:
   buildForAllSupportedPlatforms:
     name: Build for ${{ matrix.targetPlatform }}
-    defaults:
-      run:
-        working-directory: ./TakeApp
     strategy:
       fail-fast: false
       matrix:
         targetPlatform:
           - Android # Build an Android .apk standalone app.
     runs-on: ubuntu-latest, self-hosted
+    defaults:
+      run:
+        working-directory: ./TakeApp
     steps:
       - uses: actions/checkout@v3
         with:

@@ -10,10 +10,10 @@ jobs:
       matrix:
         targetPlatform:
           - Android # Build an Android .apk standalone app.
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./TakeApp
+        working-directory: TakeApp
     steps:
       - uses: actions/checkout@v3
         with:

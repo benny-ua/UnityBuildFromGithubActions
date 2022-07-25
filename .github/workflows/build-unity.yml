@@ -10,7 +10,7 @@ jobs:
       matrix:
         targetPlatform:
           - Android # Build an Android .apk standalone app.
-    runs-on: ubuntu-latest, self-hosted
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./TakeApp

@@ -13,15 +13,15 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        working-directory: TakeApp
+        working-directory: .
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           lfs: true
-      - name: Restore cache
-        run: |
-          unpack.cmd takeapp
+ #     - name: Restore cache
+ #       run: |
+ #         unpack.cmd takeapp
       - name: Unity Build (windows native)
         env:
           buildCfg: ${{ secrets.BUILDCONFJSON }}

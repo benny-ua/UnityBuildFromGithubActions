@@ -23,8 +23,10 @@ jobs:
         run: |
           unpack.cmd takeapp
       - name: Unity Build (windows native)
+        env:
+        buildCfg: ${{ secrets.BUILDCONFJSON }}
         run: |
-          unity.cmd takeapp.build.method
+          unity.cmd takeapp.build.method "$buiildCfg"
       - name: Fill cache
         run: |
           pack.cmd takeapp

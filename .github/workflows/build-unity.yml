@@ -26,7 +26,7 @@ jobs:
         env:
           buildCfg: ${{ secrets.BUILDCONFJSON }}
         run: |
-          unity.cmd takeapp.build.method "$buiildCfg"
+          unity.cmd takeapp.build.method "$buildCfg"
       - name: Fill cache
         run: |
           pack.cmd takeapp

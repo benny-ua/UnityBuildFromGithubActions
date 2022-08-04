@@ -10,7 +10,7 @@ jobs:
       matrix:
         targetPlatform:
           - Android # Build an Android .apk standalone app.
-    runs-on: self-hosted
+    runs-on: windows-latest
     defaults:
       run:
         working-directory: TakeApp

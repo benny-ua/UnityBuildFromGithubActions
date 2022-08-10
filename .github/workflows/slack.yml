@@ -2,16 +2,17 @@ on: [workflow_dispatch]
 
 jobs:
   slack_upload_job:
-    runs-on: ubuntu-latest
-    name: Upload test file
+    runs-on: windows-latest
+    name: Upload test file(s)
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - run: echo "Test file " > test.txt
       - name: Upload to slack
-        uses: adrey/slack-file-upload-action@master
+        uses: MeilCli/slack-upload-file@v2
         with:
-          token: ${{ secrets.SLACK_TOKEN }}
-          path: test.txt
-          channel: cicd-test
+          slack_token: ${{ secrets.SLACK_TOKEN }}
+          channels: cicd-test
+          file_path: './Packages/*.json'
+          file_type: 'auto'
+          initial_comment: 'post by slack-upload-file'
           
